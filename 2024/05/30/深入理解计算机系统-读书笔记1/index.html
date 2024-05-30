@@ -75,7 +75,7 @@
         <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="LAI"></a></div>
         <span>2024-05-30</span>
         <h2>深入理解计算机系统-读书...</h2>
-        
+        <div class="tags"><i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90/" rel="tag">系统组成</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/%E7%BC%96%E8%AF%91/" rel="tag">编译</a></div>
         
       </div>
     </div>
@@ -85,10 +85,11 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h3 id="程序编译流程："><a href="#程序编译流程：" class="headerlink" title="程序编译流程："></a><strong>程序编译流程：</strong></h3><ol>
+        <span class="label info">操作系统</span><span class="label info">编译</span><span class="label info">系统组成</span>
+<h3 id="程序编译流程："><a href="#程序编译流程：" class="headerlink" title="程序编译流程："></a><strong>程序编译流程：</strong></h3><ol>
 <li>预处理阶段，预处理器(cpp)根据带’#’的命令调整原始C程序，得到的程序以.i结尾</li>
 <li>编译阶段，编译器(ccl)将.i文件翻译成汇编语言的.s文件</li>
-<li>汇编阶段，汇编器(as)将.s文件翻译成机器语言指令，将这些指令打包为一种叫可重定位目标程序，生成.o文件，.o文件是二进制文件</li>
+<li>汇编阶段<span id="more"></span>，汇编器(as)将.s文件翻译成机器语言指令，将这些指令打包为一种叫可重定位目标程序，生成.o文件，.o文件是二进制文件</li>
 <li>链接阶段，连接器(ld)将各个用到的.o文件合并在一起生成可执行目标文件，这个文件可以被加载到内存中运行</li>
 </ol>
 <h3 id="系统组成："><a href="#系统组成：" class="headerlink" title="系统组成："></a><strong>系统组成：</strong></h3><ol>
