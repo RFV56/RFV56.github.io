@@ -1,0 +1,250 @@
+/*----------------*/
+/* style for menu */
+/*----------------*/
+.hamburger {
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: $red-s-t;
+  line-height: 0;
+  z-index: 21;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.menu-trigger:hover {
+  opacity: 0.7;
+}
+.menu-trigger.is-active:hover {
+  opacity: 0.7;
+}
+.menu-trigger.is-active .hamburger-inner,
+.menu-trigger.is-active .hamburger-inner::before,
+.menu-trigger.is-active .hamburger-inner::after {
+  background-color: $white;
+}
+.hamburger-box {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -1px;
+  margin-left: 4px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 21px;
+  height: 2px;
+  background-color: $white;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -5px;
+}
+.hamburger-inner::after {
+  bottom: -5px;
+}
+.hamburger--arrow-r.is-active .hamburger-inner::before {
+  transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
+}
+.hamburger--arrow-r.is-active .hamburger-inner::after {
+  transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+}
+.menu {
+  position: fixed;
+  z-index: 20;
+}
+.menu.visibility {
+  visibility: hidden;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.menu-container {
+  overflow: auto;
+  display: block;
+  top: 120px;
+}
+.position-right {
+  right: -270px;
+}
+.position-right.open {
+  right: 0;
+}
+.menu-container,
+.menu-head,
+.menu-right,
+.menu-right.open {
+  transition: 0.4s;
+}
+.menu-container,
+.menu-head {
+  position: fixed;
+  width: 270px;
+  background: $white;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,0.3), 0 0 0 1px rgba(10,10,10,0.02);
+}
+.menu-head .layer {
+  background: $black-t-2;
+  display: block;
+  padding: 27px 15px 27px 15px;
+}
+.menu-head {
+  height: 120px;
+  box-sizing: border-box;
+  margin: 0px;
+  top: 0;
+}
+.menu-items {
+  list-style: none;
+  font-size: 14px;
+}
+.menu .dropdown-heading,
+.menu .menu-items li a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  color: $black-t-9;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+}
+.menu-items li i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+.dropdown-heading:hover,
+.menu-items li a:hover {
+  background: $black-t-2;
+}
+/* Dropdowns */
+.has-sub ul {
+  list-style: none;
+  overflow: hidden;
+  display: none;
+  background: $white-l;
+}
+.menu .has-sub ul li a {
+  display: block;
+  padding: 12px 33px;
+  border: none;
+  font-size: 13px;
+  transition: 0.1s;
+}
+.has-sub ul li a:hover {
+  background: $grey-w;
+  transition: 0.1s;
+}
+.has-sub span {
+  display: block;
+  box-sizing: border-box;
+}
+.has-sub i.fa-chevron-down {
+  float: right;
+  margin-right: 10px;
+  transition: 0.36s;
+  font-size: 16px;
+}
+.has-sub .fa-chevron-down.fa-down {
+  transform: rotateZ(180deg);
+  transition: 0.36s;
+}
+.col {
+  display: table;
+}
+.row {
+  display: table-cell;
+  vertical-align: middle;
+}
+.for-name {
+  max-width: 172px;
+  padding: 10px 0 10px 10px;
+  color: $black;
+}
+.for-pic {
+  max-width: 70px;
+}
+.profile-pic img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  object-fit: cover;
+}
+.menu-head p {
+  font-size: 17px;
+  font-weight: 400;
+}
+.tagline,
+.menu-head p {
+  margin: 0 0 4px 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tagline {
+  font-size: 11px;
+  display: block;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
