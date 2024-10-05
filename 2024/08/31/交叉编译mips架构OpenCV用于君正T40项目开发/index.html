@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
 
-<meta name="generator" content="Hexo 7.2.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 <body>
 <div class="single">
 <div class="popup search-popup local-search-popup">
@@ -93,6 +93,7 @@
         <h2>交叉编译mips架构Op...</h2>
         <div class="tags"><i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/OpenCV/" rel="tag">OpenCV</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/mips/" rel="tag">mips</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/mips32/" rel="tag">mips32</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/%E7%BC%96%E8%AF%91/" rel="tag">编译</a></div>
         <div class="social-links">
+    <a href="https://github.com/RFV56" target="_blank" title="social-link"><i class="fa fa-github fa-fw"></i></a>
     <a href="mailto:rfv56x@163.com" target="_blank" title="social-link"><i class="fa fa-envelope fa-fw"></i></a>
 </div>
       </div>
@@ -103,51 +104,61 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>本文参考<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45848817/article/details/135484220">AI嵌入式3——君正T40之MIPS32架构交叉编译opencv4篇，作者：RanceGru</a></p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a><strong>环境准备</strong></h2><p>Ubuntu环境的虚拟机或主机</p>
+        <p>本文参考<br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45848817/article/details/135484220">AI嵌入式3——君正T40之MIPS32架构交叉编译opencv4篇，作者：RanceGru</a></p>
+<h2 id="环境准备"><strong>环境准备</strong></h2>
+<p>Ubuntu环境的虚拟机或主机</p>
 <ol>
-<li>按照芯片厂提供的SDK文档配置好交叉编译工具链，<span id="more"></span> </li>
+<li>按照芯片厂提供的SDK文档配置好交叉编译工具链，<span id="more"></span></li>
 <li>下载opencv源码，如果需要opencv_contrib则下载与opencv源码相同版本的opencv_contrib源码。</li>
 <li>下载安装cmake-gui</li>
 </ol>
-<h2 id="编译配置"><a href="#编译配置" class="headerlink" title="编译配置"></a><strong>编译配置</strong></h2><p>以下例子使用的是君正T40作为例子，采用mips架构</p>
-<h3 id="构建目录"><a href="#构建目录" class="headerlink" title="构建目录"></a><strong>构建目录</strong></h3><p>将opencv和opencv_contrib的源码解压出来，并新建两个目录分别为build 和 install</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831163727394.png"></p>
+<h2 id="编译配置"><strong>编译配置</strong></h2>
+<p>以下例子使用的是君正T40作为例子，采用mips架构</p>
+<h3 id="构建目录"><strong>构建目录</strong></h3>
+<p>将opencv和opencv_contrib的源码解压出来，并新建两个目录分别为build 和 install</p>
+<p><img src="image-20240831163727394.png" alt=""></p>
 <p>打开cmake-gui，将opencv源码位置和build文件夹位置填入cmake</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831164044048.png"></p>
-<h3 id="指定CMAKE-TOOLCHAIN-FILE"><a href="#指定CMAKE-TOOLCHAIN-FILE" class="headerlink" title="指定CMAKE_TOOLCHAIN_FILE"></a><strong>指定CMAKE_TOOLCHAIN_FILE</strong></h3><p>点击Add Entry，Name填写CMAKE_TOOLCHAIN_FILE，选择FILEPATH，Value填写的是opencv源码下&#x2F;platforms&#x2F;linux&#x2F;mips32r5el-gnu.toolchain.cmake，如果你使用的是其他架构的芯片，选择对应的即可</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831164329443.png"></p>
+<p><img src="image-20240831164044048.png" alt=""></p>
+<h3 id="指定CMAKE-TOOLCHAIN-FILE"><strong>指定CMAKE_TOOLCHAIN_FILE</strong></h3>
+<p>点击Add Entry，Name填写CMAKE_TOOLCHAIN_FILE，选择FILEPATH，Value填写的是opencv源码下/platforms/linux/mips32r5el-gnu.toolchain.cmake，如果你使用的是其他架构的芯片，选择对应的即可</p>
+<p><img src="image-20240831164329443.png" alt=""></p>
 <p>确认无误后点击Configure，选择Unix Makefiles，指定Specify options ofr cross-compiling，点击下一步</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831164738250.png"></p>
+<p><img src="image-20240831164738250.png" alt=""></p>
 <p>在弹出的窗口分别填上所使用的操作系统，处理器架构，交叉编译器gcc和g++以及交叉编译器根目录，点击完成</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831164809913.png"></p>
+<p><img src="image-20240831164809913.png" alt=""></p>
 <p>填写正确的情况下cmake-gui下方会弹出当前配置的选项以及cmake自动识别获得的一些信息，上方是配置项</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831165026543.png"></p>
-<h3 id="修改编译选项"><a href="#修改编译选项" class="headerlink" title="修改编译选项"></a><strong>修改编译选项</strong></h3><ol>
+<p><img src="image-20240831165026543.png" alt=""></p>
+<h3 id="修改编译选项"><strong>修改编译选项</strong></h3>
+<ol>
 <li>(可选)如果需要使用opencv_contrib，搜索OPENCV_EXTRA_MODULES_PATH，选中opencv_contrib源码目录下的<strong>modules文件夹</strong></li>
 </ol>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831165347039.png"></p>
+<p><img src="image-20240831165347039.png" alt=""></p>
 <ol start="2">
 <li>找到CMAKE_C_FLAGS_XXX、CMAKE_CXX_FLAGS_XXX分别添加-fPIC编译选项，如果你所使用的嵌入式程序使用uclibc，则还需要加上-muclibc，默认情况下，release编译使用-O3的优化选项，如果你在编译完成后发现运行出现Illegal Instruction可以考虑将-O3改为-O2重新编译，其他选项保持默认即可</li>
 </ol>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831165728278.png"><br>3. 给CMAKE_EXE_LINKER_FLAGSXXXX加上-lpthread -lrt -ldl选项</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831170050526.png"></p>
+<p><img src="image-20240831165728278.png" alt=""><br>
+3. 给CMAKE_EXE_LINKER_FLAGSXXXX加上-lpthread -lrt -ldl选项</p>
+<p><img src="image-20240831170050526.png" alt=""></p>
 <ol start="4">
 <li>(可选)将CMAKE_INSTALL_PREFIX修改为自己创建的install目录，如果不修改则会在build目录下自动创建一个install目录</li>
 <li>根据需要勾选自己需要的模块，比如zlib、png、jpeg等</li>
 <li>根据需要取消勾选一些模块，比如java、python、js等相关的生成器和test模块</li>
 </ol>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831170435240.png"></p>
+<p><img src="image-20240831170435240.png" alt=""></p>
 <ol start="7">
 <li>(可选)如果不是特别在意编译后大小，可以勾选opencv_world，会将opencv的所有功能包含进opencv_world，这样只需要链接opencv_world这一个库即可，不需要考虑功能之间的依赖关系</li>
 <li>(可选)取消勾选BUILD_SHARED_LIBS，则编译输出的结果是.a静态库，否则编译结果是.so动态库。</li>
-<li>(可选)CPU_BASELINE，默认选择MSA，实际使用中发现尽管是mips架构，但芯片可能并不支持MSA，可以选择关掉，以免出现报错<br>选择完成后点击Configure，如果有很多红色选项可以在次点击Configure，直到红色选项消除。</li>
+<li>(可选)CPU_BASELINE，默认选择MSA，实际使用中发现尽管是mips架构，但芯片可能并不支持MSA，可以选择关掉，以免出现报错<br>
+选择完成后点击Configure，如果有很多红色选项可以在次点击Configure，直到红色选项消除。</li>
 </ol>
-<p>点击Generate，生成Makefile<br><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831171946118.png"></p>
-<h2 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a><strong>开始编译</strong></h2><p>在终端中打开build目录</p>
+<p>点击Generate，生成Makefile<br>
+<img src="image-20240831171946118.png" alt=""></p>
+<h2 id="开始编译"><strong>开始编译</strong></h2>
+<p>在终端中打开build目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j8  #8表示8个同时作业数，根据实际情况填即可</span><br></pre></td></tr></table></figure>
-<p>编译过程耗时比较长，编译过程中可能出现报错<code>base.hpp:548:17: error: &#39;cbrt&#39; is not a member of &#39;std&#39; return std::cbrt(val)</code>修改提示报错的源码，将<code>std::cbrt</code>改为<code>cbrt</code>，同样出错的可能还有std::copysign等，同样将std::去掉即可，去掉之后重新make -j8继续编译</p>
-<p><img src="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/image-20240831172001419.png"></p>
+<p>编译过程耗时比较长，编译过程中可能出现报错<code>base.hpp:548:17: error: 'cbrt' is not a member of 'std' return std::cbrt(val)</code>修改提示报错的源码，将<code>std::cbrt</code>改为<code>cbrt</code>，同样出错的可能还有std::copysign等，同样将std::去掉即可，去掉之后重新make -j8继续编译</p>
+<p><img src="image-20240831172001419.png" alt=""></p>
 <p>编译完成后sudo make install，输入密码，即可完成编译，编译输出的库在所配置的install目录中，可以程序调用。</p>
 
       </div>
@@ -257,5 +268,20 @@
 <script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/local.search.min.js"></script>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
