@@ -120,7 +120,7 @@
 <img src="Pasted%20image%2020240621163336.png" alt=""><br>
 接下来要让clion自动读取ESP-IDF的cmake文件，点开setting-Build, Execution, Deployment-Toolchains，点击Add environment-from <a href="http://xn--fileESP-IDFexport-oy50aj77cho6db00ft5bhy1w.sh">file选则ESP-IDF目录下的export.sh</a>，<code>/home/rfv56/esp/esp-idf/export.sh</code>然后在setting-Build, Execution, Deployment-Cmake中填入<code>ESPBAUD=115200;IDF_TARGET=esp32</code>，【esp32】可以根据实际情况改成esp32c3或其他的，填入后Cmake会自动找到<code>/home/rfv56/esp/esp-idf/tools/cmake</code>下对应的cmake文件</p>
 <p>设置完成后点击确认，如果没有报错就完成设置了，如果报错了如下图reset Cache and Reload Project即可，配置完成后esp-idf会出现在project下，头文件等也都能跳转，非常方便<br>
-<img src="%E5%9F%BA%E4%BA%8EWSL2-Clion%E9%85%8D%E7%BD%AEESPIDF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/Pasted%20image%2020240621163414.png" alt=""><br>
+<img src="image-20241007153152879.png" alt=""><br>
 可以添加一些按钮在右上角，方便开发，点击Edit Configurations…<br>
 <img src="image-20240621192937949.png" alt=""><br>
 比如设置一个按钮用来添加环境变量<br>
