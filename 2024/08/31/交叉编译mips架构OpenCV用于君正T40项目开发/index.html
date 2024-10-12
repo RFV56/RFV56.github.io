@@ -106,18 +106,20 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>本文参考<br>
+        <blockquote>
+<p>本文参考<br>
 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45848817/article/details/135484220">AI嵌入式3——君正T40之MIPS32架构交叉编译opencv4篇，作者：RanceGru</a></p>
-<h2 id="环境准备"><strong>环境准备</strong></h2>
+</blockquote>
+<h2 id="一、环境准备"><strong>一、环境准备</strong></h2>
 <p>Ubuntu环境的虚拟机或主机</p>
 <ol>
 <li>按照芯片厂提供的SDK文档配置好交叉编译工具链，<span id="more"></span></li>
 <li>下载opencv源码，如果需要opencv_contrib则下载与opencv源码相同版本的opencv_contrib源码。</li>
 <li>下载安装cmake-gui</li>
 </ol>
-<h2 id="编译配置"><strong>编译配置</strong></h2>
+<h2 id="二、编译配置"><strong>二、编译配置</strong></h2>
 <p>以下例子使用的是君正T40作为例子，采用mips架构</p>
-<h3 id="构建目录"><strong>构建目录</strong></h3>
+<h3 id="三、构建目录"><strong>三、构建目录</strong></h3>
 <p>将opencv和opencv_contrib的源码解压出来，并新建两个目录分别为build 和 install</p>
 <p><img src="image-20240831163727394.png" alt=""></p>
 <p>打开cmake-gui，将opencv源码位置和build文件夹位置填入cmake</p>
@@ -156,7 +158,7 @@
 </ol>
 <p>点击Generate，生成Makefile<br>
 <img src="image-20240831171946118.png" alt=""></p>
-<h2 id="开始编译"><strong>开始编译</strong></h2>
+<h2 id="四、开始编译"><strong>四、开始编译</strong></h2>
 <p>在终端中打开build目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j8  #8表示8个同时作业数，根据实际情况填即可</span><br></pre></td></tr></table></figure>
 <p>编译过程耗时比较长，编译过程中可能出现报错<code>base.hpp:548:17: error: 'cbrt' is not a member of 'std' return std::cbrt(val)</code>修改提示报错的源码，将<code>std::cbrt</code>改为<code>cbrt</code>，同样出错的可能还有std::copysign等，同样将std::去掉即可，去掉之后重新make -j8继续编译</p>
@@ -170,12 +172,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="#">
+		<a class="copy" href="/2024/10/11/%E5%88%A9%E7%94%A8Hexo%E5%92%8CGithub%20Pages%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>没有更新的文章</h3>
+						<h3>利用Hexo和...</h3>
 					</div>
 				</div>
 			</div>
@@ -229,8 +231,8 @@
   </div>
   <nav class="menu-container">
   <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
     
     
     

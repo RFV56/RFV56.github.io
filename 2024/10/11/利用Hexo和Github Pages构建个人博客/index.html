@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>利用Hexo和Github Pages构建个人博客 | 点灯攻城狮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="LAI">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.4.4',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/css/main.min.css">
+  
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.jside.menu.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body>
+<div class="single">
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<div id="page">
+<div class="header">
+  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/post_cover.min.jpeg)" data-stellar-background-ratio="0.5">
+    <div class="overlay">
+      <a href="javascript:;" class="popup-trigger" title="search"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+      <div class="page-title">
+        <div class="avatar"><a href="/"><img src="https://avatars.githubusercontent.com/u/30697872?s=400&u=3a2c3cd4c6bf16e6616a4daa97b71a9487e9b0b3&v=4" alt="LAI"></a></div>
+        <span>2024-10-11</span>
+        <h2>利用Hexo和Githu...</h2>
+        <div class="tags"><i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/GithubPages/" rel="tag">GithubPages</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/Hexo/" rel="tag">Hexo</a> <i class="fa fa-tag"></i><a class="tag-none-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></div>
+        <div class="social-links">
+    <a href="https://github.com/RFV56" target="_blank" title="social-link"><i class="fa fa-github fa-fw"></i></a>
+    <a href="mailto:rfv56x@163.com" target="_blank" title="social-link"><i class="fa fa-envelope fa-fw"></i></a>
+    <a href="https://oshwhub.com/rfv56" target="_blank" title="social-link"><i class="fa fa-microchip fa-fw"></i></a>
+    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkxNzgwNDcxNw==&amp;action=getalbum&amp;album_id=3669105458091786251" target="_blank" title="social-link"><i class="fa fa-weixin fa-fw"></i></a>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <blockquote>
+<p>本文参考<br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程    作者：淡淡的说非</a></p>
+</blockquote>
+<p>Github Pages本身提供静态网页托管服务，做一个简单的博客已经足够了，下面是配置Github Pages博客的操作介绍<span id="more"></span></p>
+<h2 id="一、准备工作"><strong>一、准备工作</strong></h2>
+<p>1.注册Github账号<br>
+2.在本地安装git软件<br>
+3.在本地安装NodeJS</p>
+<h2 id="二、创建Github仓库"><strong>二、创建Github仓库</strong></h2>
+<p>在Github中新建repository，仓库名称必须为<code>&lt;用户名&gt;.github.io</code>，并且是公开仓库</p>
+<h2 id="三、在本地安装Hexo"><strong>三、在本地安装Hexo</strong></h2>
+<p>在你打算写博客的目录右键，<code>open Git Bash here</code><br>
+在git bash中输入命令安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成后，创建一个项目 <code>hexo-blog</code> 并初始化，这个名字可以改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo-blog</span><br><span class="line">cd hexo-blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>然后可以使用hexo的命令生成并启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g  # 等同于hexo generate，用于生成静态网页文件</span><br><span class="line">hexo s  # 等同于hexo server，用于在本地运行hexo服务端</span><br></pre></td></tr></table></figure>
+<p><img src="image-20241011235624549.png" alt=""></p>
+<p>可以按住ctrl鼠标点击网址跳转到浏览器打开，或者手动打开<code>http://localhost:4000</code>即可看到hexo 服务端的默认欢迎页面</p>
+<h2 id="四、配置主题"><strong>四、配置主题</strong></h2>
+<h3 id="启用主题"><strong>启用主题</strong></h3>
+<p>hexo可以使用默认主题，也可以按照自己的喜好选择主题，可以在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">官网主题页面</a>选择，也可以在Github中搜索[Hexo theme]下载使用开源主题，以我当前使用的<a target="_blank" rel="noopener" href="https://github.com/blleng/hexo-theme-lx/tree/master">lx主题</a>为例<br>
+在Github中下载源码，解压后直接放入<code>hexo-blog/themes</code>目录下，并更名为lx<br>
+<img src="image-20241012112005085.png" alt=""></p>
+<p>修改hexo-blog目录下的<code>_config.yml</code>，将<code>theme</code>条目修改为<code>theme: lx</code>，同时也可以更改页面的title、author等，如果需要中文将language改成 <code>language: zh-hans</code></p>
+<p>使用hexo的命令生成并启动，看是否配置正常</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g  # 等同于hexo generate，用于生成静态网页文件</span><br><span class="line">hexo s  # 等同于hexo server，用于在本地运行hexo服务端</span><br></pre></td></tr></table></figure>
+<h3 id="修改主题特性"><strong>修改主题特性</strong></h3>
+<p>上面修改的是项目根目录下的_config.yml，针对项目属性进行配置。要对主题本身提供的特性进行修改需要修改<code>thems/lx/</code>目录下的_config.yml，比如avatar(头像)、social(社交媒体链接)等<br>
+社交媒体链接可以按以下形式填写，icon使用的是<a target="_blank" rel="noopener" href="https://fontawesome.com/icons">fontawesome</a>只需要按照fontawesome的名字填写在icon栏就会自动加载对应的icon<br>
+GitHub:<br>
+icon: github<br>
+link: <a target="_blank" rel="noopener" href="https://github.com/RFV56">https://github.com/RFV56</a><br>
+Email:<br>
+icon: envelope<br>
+link: <a href="mailto:rfv56x@163.com">mailto:rfv56x@163.com</a><br>
+JLC:<br>
+icon: microchip<br>
+link: <a target="_blank" rel="noopener" href="https://oshwhub.com/rfv56">https://oshwhub.com/rfv56</a></p>
+<p>还可以开启百度统计、latex、评论、搜索等功能，部分功能需要使用第三方平台，相关细节在主题的开源页面上及_config.yml注释中会提及。</p>
+<h2 id="五、新建文章"><strong>五、新建文章</strong></h2>
+<p>为了每一篇文章单独新建一个文件夹用于存放文章中的图片，需要在_config.yml中配置<code>post_asset_folder: true</code></p>
+<p>在git bash中输入以下命令创建文章</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post 文章标题</span><br></pre></td></tr></table></figure>
+<p>新建的文章会以markdown格式创建在&lt;项目根目录&gt;/source/_posts中，可以使用VScode、Obsidian等编辑文章</p>
+<h2 id="六、部署项目到Github"><strong>六、部署项目到Github</strong></h2>
+<p>到目前位置所有配置项都是在本地完成修改的，要把项目部署到Github提供公共访问需要手动push <code>public</code>到Github仓库，或者使用<code>hexo-deployer-git</code></p>
+<p>下面安装<code>hexo-deployer-git</code>，<br>
+在项目根目录打开git bash，输入以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>修改根目录下的_config.yml，配置 GitHub 相关信息<br>
+deploy:<br>
+type: git<br>
+repo: <a target="_blank" rel="noopener" href="https://github.com/RFV56/RFV56.github.io.git">https://github.com/RFV56/RFV56.github.io.git</a><br>
+branch: main<br>
+token: &lt;token要自己获取&gt;<br>
+其中repo仓库地址填写自己创建的github.io仓库地址，token在github设置中获取，<code>Settings-Developer Settings-Personal access tokens-Tokens(classic)</code>新建一个并填入_config.yml中，这个token不要暴露给任何人</p>
+<p>配置完成后，就可以部署项目了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo g  # 等同于hexo generate，用于生成静态网页文件</span><br><span class="line">hexo s  # 等同于hexo server，用于在本地运行hexo服务端</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以上运行确认无误后</span></span><br><span class="line">hexo d  # 等同于hexo deploy，用于将本地静态文件部署到github仓库</span><br></pre></td></tr></table></figure>
+<p>至此hexo+Github Pages个人博客就配置完成了，输入自己的博客地址<a href="https://rfv56.github.io/">https://rfv56.github.io/</a>就能实现外部访问</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>No newer post</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-r.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>交叉编译mip...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2024.<a href="/">点灯攻城狮</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button" title="menu">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button>
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="https://avatars.githubusercontent.com/u/30697872?s=400&u=3a2c3cd4c6bf16e6616a4daa97b71a9487e9b0b3&v=4" alt="LAI"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>LAI</p>
+          <span class="tagline">Hello, World!</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    
+    
+    
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+<script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/local.search.min.js"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

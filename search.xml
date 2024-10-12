@@ -3,18 +3,20 @@
   <entry>
     <title>交叉编译mips架构OpenCV</title>
     <url>/2024/08/31/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91mips%E6%9E%B6%E6%9E%84OpenCV%E7%94%A8%E4%BA%8E%E5%90%9B%E6%AD%A3T40%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<p>本文参考<br>
+    <content><![CDATA[<blockquote>
+<p>本文参考<br>
 <a href="https://blog.csdn.net/qq_45848817/article/details/135484220">AI嵌入式3——君正T40之MIPS32架构交叉编译opencv4篇，作者：RanceGru</a></p>
-<h2 id="环境准备"><strong>环境准备</strong></h2>
+</blockquote>
+<h2 id="一、环境准备"><strong>一、环境准备</strong></h2>
 <p>Ubuntu环境的虚拟机或主机</p>
 <ol>
 <li>按照芯片厂提供的SDK文档配置好交叉编译工具链，<span id="more"></span></li>
 <li>下载opencv源码，如果需要opencv_contrib则下载与opencv源码相同版本的opencv_contrib源码。</li>
 <li>下载安装cmake-gui</li>
 </ol>
-<h2 id="编译配置"><strong>编译配置</strong></h2>
+<h2 id="二、编译配置"><strong>二、编译配置</strong></h2>
 <p>以下例子使用的是君正T40作为例子，采用mips架构</p>
-<h3 id="构建目录"><strong>构建目录</strong></h3>
+<h3 id="三、构建目录"><strong>三、构建目录</strong></h3>
 <p>将opencv和opencv_contrib的源码解压出来，并新建两个目录分别为build 和 install</p>
 <p><img src="image-20240831163727394.png" alt=""></p>
 <p>打开cmake-gui，将opencv源码位置和build文件夹位置填入cmake</p>
@@ -53,7 +55,7 @@
 </ol>
 <p>点击Generate，生成Makefile<br>
 <img src="image-20240831171946118.png" alt=""></p>
-<h2 id="开始编译"><strong>开始编译</strong></h2>
+<h2 id="四、开始编译"><strong>四、开始编译</strong></h2>
 <p>在终端中打开build目录</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make -j8  #8表示8个同时作业数，根据实际情况填即可</span><br></pre></td></tr></table></figure>
 <p>编译过程耗时比较长，编译过程中可能出现报错<code>base.hpp:548:17: error: 'cbrt' is not a member of 'std' return std::cbrt(val)</code>修改提示报错的源码，将<code>std::cbrt</code>改为<code>cbrt</code>，同样出错的可能还有std::copysign等，同样将std::去掉即可，去掉之后重新make -j8继续编译</p>
@@ -71,9 +73,11 @@
   <entry>
     <title>基于WSL2+Clion配置ESPIDF开发环境</title>
     <url>/2024/06/20/%E5%9F%BA%E4%BA%8EWSL2-Clion%E9%85%8D%E7%BD%AEESPIDF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<p>本文参考了<br>
-<a href="https://blog.csdn.net/Missrainbows/article/details/130847126">WSL2下配置ESP-IDF开发环境</a><br>
-<a href="https://blog.csdn.net/qq_38844263/article/details/123989779">[ESP32][环境配置] Clion配置ESP-IDF开发环境，支持编译下载和menucofig</a></p>
+    <content><![CDATA[<blockquote>
+<p>本文参考<br>
+<a href="https://blog.csdn.net/Missrainbows/article/details/130847126">WSL2下配置ESP-IDF开发环境    作者：Missrainbows)</a><br>
+<a href="https://blog.csdn.net/qq_38844263/article/details/123989779">[ESP32][环境配置] Clion配置ESP-IDF开发环境，支持编译下载和menucofig    作者：踏雪Vernon</a></p>
+</blockquote>
 <h2 id="安装WSL2-more-的新方法"><strong>安装WSL2<span id="more"></span>的新方法</strong></h2>
 <p>使用管理员权限打开Powershell，这种方法默认安装的是WSL2，并使用Ubuntu发行版</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span></span><br></pre></td></tr></table></figure>
@@ -172,6 +176,78 @@
         <tag>编译</tag>
         <tag>操作系统</tag>
         <tag>系统组成</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用Hexo和Github Pages构建个人博客</title>
+    <url>/2024/10/11/%E5%88%A9%E7%94%A8Hexo%E5%92%8CGithub%20Pages%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<blockquote>
+<p>本文参考<br>
+<a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程    作者：淡淡的说非</a></p>
+</blockquote>
+<p>Github Pages本身提供静态网页托管服务，做一个简单的博客已经足够了，下面是配置Github Pages博客的操作介绍<span id="more"></span></p>
+<h2 id="一、准备工作"><strong>一、准备工作</strong></h2>
+<p>1.注册Github账号<br>
+2.在本地安装git软件<br>
+3.在本地安装NodeJS</p>
+<h2 id="二、创建Github仓库"><strong>二、创建Github仓库</strong></h2>
+<p>在Github中新建repository，仓库名称必须为<code>&lt;用户名&gt;.github.io</code>，并且是公开仓库</p>
+<h2 id="三、在本地安装Hexo"><strong>三、在本地安装Hexo</strong></h2>
+<p>在你打算写博客的目录右键，<code>open Git Bash here</code><br>
+在git bash中输入命令安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成后，创建一个项目 <code>hexo-blog</code> 并初始化，这个名字可以改</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init hexo-blog</span><br><span class="line">cd hexo-blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>然后可以使用hexo的命令生成并启动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g  # 等同于hexo generate，用于生成静态网页文件</span><br><span class="line">hexo s  # 等同于hexo server，用于在本地运行hexo服务端</span><br></pre></td></tr></table></figure>
+<p><img src="image-20241011235624549.png" alt=""></p>
+<p>可以按住ctrl鼠标点击网址跳转到浏览器打开，或者手动打开<code>http://localhost:4000</code>即可看到hexo 服务端的默认欢迎页面</p>
+<h2 id="四、配置主题"><strong>四、配置主题</strong></h2>
+<h3 id="启用主题"><strong>启用主题</strong></h3>
+<p>hexo可以使用默认主题，也可以按照自己的喜好选择主题，可以在<a href="https://hexo.io/themes/">官网主题页面</a>选择，也可以在Github中搜索[Hexo theme]下载使用开源主题，以我当前使用的<a href="https://github.com/blleng/hexo-theme-lx/tree/master">lx主题</a>为例<br>
+在Github中下载源码，解压后直接放入<code>hexo-blog/themes</code>目录下，并更名为lx<br>
+<img src="image-20241012112005085.png" alt=""></p>
+<p>修改hexo-blog目录下的<code>_config.yml</code>，将<code>theme</code>条目修改为<code>theme: lx</code>，同时也可以更改页面的title、author等，如果需要中文将language改成 <code>language: zh-hans</code></p>
+<p>使用hexo的命令生成并启动，看是否配置正常</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g  # 等同于hexo generate，用于生成静态网页文件</span><br><span class="line">hexo s  # 等同于hexo server，用于在本地运行hexo服务端</span><br></pre></td></tr></table></figure>
+<h3 id="修改主题特性"><strong>修改主题特性</strong></h3>
+<p>上面修改的是项目根目录下的_config.yml，针对项目属性进行配置。要对主题本身提供的特性进行修改需要修改<code>thems/lx/</code>目录下的_config.yml，比如avatar(头像)、social(社交媒体链接)等<br>
+社交媒体链接可以按以下形式填写，icon使用的是<a href="https://fontawesome.com/icons">fontawesome</a>只需要按照fontawesome的名字填写在icon栏就会自动加载对应的icon<br>
+GitHub:<br>
+icon: github<br>
+link: <a href="https://github.com/RFV56">https://github.com/RFV56</a><br>
+Email:<br>
+icon: envelope<br>
+link: <a href="mailto:rfv56x@163.com">mailto:rfv56x@163.com</a><br>
+JLC:<br>
+icon: microchip<br>
+link: <a href="https://oshwhub.com/rfv56">https://oshwhub.com/rfv56</a></p>
+<p>还可以开启百度统计、latex、评论、搜索等功能，部分功能需要使用第三方平台，相关细节在主题的开源页面上及_config.yml注释中会提及。</p>
+<h2 id="五、新建文章"><strong>五、新建文章</strong></h2>
+<p>为了每一篇文章单独新建一个文件夹用于存放文章中的图片，需要在_config.yml中配置<code>post_asset_folder: true</code></p>
+<p>在git bash中输入以下命令创建文章</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new post 文章标题</span><br></pre></td></tr></table></figure>
+<p>新建的文章会以markdown格式创建在&lt;项目根目录&gt;/source/_posts中，可以使用VScode、Obsidian等编辑文章</p>
+<h2 id="六、部署项目到Github"><strong>六、部署项目到Github</strong></h2>
+<p>到目前位置所有配置项都是在本地完成修改的，要把项目部署到Github提供公共访问需要手动push <code>public</code>到Github仓库，或者使用<code>hexo-deployer-git</code></p>
+<p>下面安装<code>hexo-deployer-git</code>，<br>
+在项目根目录打开git bash，输入以下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>修改根目录下的_config.yml，配置 GitHub 相关信息<br>
+deploy:<br>
+type: git<br>
+repo: <a href="https://github.com/RFV56/RFV56.github.io.git">https://github.com/RFV56/RFV56.github.io.git</a><br>
+branch: main<br>
+token: &lt;token要自己获取&gt;<br>
+其中repo仓库地址填写自己创建的github.io仓库地址，token在github设置中获取，<code>Settings-Developer Settings-Personal access tokens-Tokens(classic)</code>新建一个并填入_config.yml中，这个token不要暴露给任何人</p>
+<p>配置完成后，就可以部署项目了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g  # 等同于hexo generate，用于生成静态网页文件</span><br><span class="line">hexo s  # 等同于hexo server，用于在本地运行hexo服务端</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以上运行确认无误后</span></span><br><span class="line">hexo d  # 等同于hexo deploy，用于将本地静态文件部署到github仓库</span><br></pre></td></tr></table></figure>
+<p>至此hexo+Github Pages个人博客就配置完成了，输入自己的博客地址<a href="https://rfv56.github.io/">https://rfv56.github.io/</a>就能实现外部访问</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GithubPages</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
 </search>
